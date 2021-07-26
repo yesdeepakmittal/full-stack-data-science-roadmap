@@ -43,3 +43,11 @@ Data manipulation library built on the top of Numpy and Matplotlib.
 |-----------|-----------------------------|---------|
 |sort=True  |use to sort categorical data in a col. based upon count| |
 |normalize=True|normalizing categorical data count| |
+
+* **df.groupby()** - 
+
+|method     |used program                 |Example  |
+|-----------|-----------------------------|---------|
+|`.mean()`  | `df.groupby('categorical_col')["numerical_col(s)"].mean()` |  |
+|`.max() .min() .sum()`|`df.groupby("cat. col")["num_col(s)"].agg([max,min,sum])`|  |
+|  | `df.groupby(['cat.ColA','cat.ColB'])["num_col(s)"].mean()`|  |
