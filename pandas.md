@@ -1,14 +1,15 @@
 ## Pandas
-Data manipulation library built on the top of Numpy and Matplotlib. 
+Data manipulation library built on the top of *Numpy* and *Matplotlib*. 
 
 ### Used Functions in different coding part
+* **pd.DataFrame()** - Preparaing a pandas dataframe
 * **pd.read_csv()**- Use to read csv files.
 
 |parameters | used cases                  |Example  |
 |-----------|-----------------------------|---------|
 |usecols=[ ]|read particular column only  |[1](https://www.youtube.com/)|
 |nrows=500  |skip first 500 rows          |         |
-|     |                             |         |
+|           |                             |         |
 
 * **df.shape** - Pandas attribute(not a method) use to find the shape of a dataframe df
 * **df.columns** - Pandas attribute use to find the columns of a dataframe df
@@ -16,9 +17,14 @@ Data manipulation library built on the top of Numpy and Matplotlib.
 * **df.head()** - `df.head(5)` print first 5 rows of a dataframe
 * **df.tail()** - `df.tail(5)` print last 5 rows of a dataframe
 * **df.info()** - Get info whether a dataframe has any null object
+* **df.isna()** - checking for the number of missing values | `df.isna().sum()` | `df.isna().any()`
+* **df.dropna()** - remove rows containing missing values
+* **df.fillna(0)** - fill 0 for all missing values in a df
+* **df.loc[]** - `df.loc[1:6]` | `df.loc['A':"D"]`| multilevel indexed slicing-`df.loc[("Country1",'city1'):('country2','city2'),colA:colD]` | `df.loc['1998':'2008']`(dates in ISO 8601 format i.e., yyyy-mm-dd)
+* **df.iloc[]** - `df.iloc[1:6,3:9]`
 * **df[col].min()**
 * **df[col].max()**
-* **df[col].mean()**
+* **df[col].mean()** - default is columnwise(axis='index') | use df.mean(axis='columns') to get mean of each row
 * **df[col].std()**
 * **df[col].medain()**
 * **df[col].mode()**
@@ -34,8 +40,7 @@ Data manipulation library built on the top of Numpy and Matplotlib.
 * **df.values()** - Get data as a 2-D Numpy array
 * **df.columns** - Pandas attribute to get column names
 * **df.index** - Pandas attribute to get index values
-* **df.sort_values()** - `df.sort_values([colA,colB,colC],ascending=[True,False,True],inplace=True,)`
-* **df[col].isin([0,1])** - use `.isin()` instead of `or |` operator if comparison is with many | `df[df['survival'].isin([0,1])]`
+* **df[col].isin([0,1])** - `df[df['survival'].isin([0,1])]` | `df.loc[[0,1]]` if index is set as target column to filter
 * **df.drop_duplicates(subset=[colA,colB])** - Removing duplicate items from columns
 * **df[col].value_counts(sort=True)** - count categorical data in a column [col] 
 
@@ -61,9 +66,19 @@ Data manipulation library built on the top of Numpy and Matplotlib.
 |`aggfunc`     |1`df.pivot_table(values="numCol",index="CatCol",aggfunc=np.mean)` |||
 |              |2`df.pivot_table(values="numCol",index="CatCol",aggfunc=[np.mean,np.median])`  |||
 | `columns`    |3`df.pivot_table(values="numCol",index="catColA",columns=catColB)`|||
-| `fill_value` |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0)`||filling value inplace of NaN, not a problem in .`groupby`|
-| `margins`    |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0,margins=True)`||margins=True for getting mean in last column|
+| `fill_value` |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0)`||replace missing value with real(imputation), not a problem in .`groupby`|
+| `margins`    |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0,margins=True)`||getting mean in last column excluding missing value(or imputed by fill_value)|
 
+* **df.set_index('colName')** - df.set_index([colA,colB]) - multi-level index(or hierarchical index) | access - df.loc[[list of tuples of multilevel indexes]]
+* **df.reset_index()** - reset your index of the dataframe | **df.reset_index(drop=True)** - for dropping the previous index
+* **df.sort_index()** - df.sort_index(level=[colA,colB],ascending=[False,False])
+* **df.sort_values()** - `df.sort_values([colA,colB,colC],ascending=[True,False,True],inplace=True,)`
+* **df.transpose() or df.T**
+* **df[col].unique()** - find unique elements in a column
+* **df.plot.line(rot=30)**
+* **df.plot(kind=[bar,hist,scatter,etc],title=,rot=)** 
+* **df.hist(alpha=0.15)** - 15% transparency[0-transparent & 1-opaque]
+* **df.isna().sum().plot(kind='bar')**
 
 
 
