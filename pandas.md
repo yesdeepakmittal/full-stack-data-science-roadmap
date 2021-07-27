@@ -1,5 +1,5 @@
 ## Pandas
-Data manipulation library built on the top of *Numpy* and *Matplotlib*. 
+Data manipulation and transformation library built on the top of *Numpy* and *Matplotlib*. 
 
 ### Used Functions in different coding part
 * **pd.DataFrame()** - Preparaing a pandas dataframe
@@ -13,6 +13,7 @@ Data manipulation library built on the top of *Numpy* and *Matplotlib*.
 
 * **df.shape** - Pandas attribute(not a method) use to find the shape of a dataframe df
 * **df.columns** - Pandas attribute use to find the columns of a dataframe df
+* **df.dtypes** - check datatype of each column
 * **df.drop()** - ` df.drop([list of columns to drop], axis=1, inplace=True)` | [example](https://www.youtube.com/)
 * **df.head()** - `df.head(5)` print first 5 rows of a dataframe
 * **df.tail()** - `df.tail(5)` print last 5 rows of a dataframe
@@ -79,7 +80,10 @@ Data manipulation library built on the top of *Numpy* and *Matplotlib*.
 * **df.plot(kind=[bar,hist,scatter,etc],title=,rot=)** 
 * **df.hist(alpha=0.15)** - 15% transparency[0-transparent & 1-opaque]
 * **df.isna().sum().plot(kind='bar')**
+* **Joins**
 
-
+|Join    | Function                                           | Example |
+|--------|----------------------------------------------------|---------|
+|Inner   |df1.merge(df2,on="commonCol",suffixes=["_s1","_s2"])|         |
 
 
