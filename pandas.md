@@ -8,7 +8,7 @@ Data manipulation library built on the top of Numpy and Matplotlib.
 |-----------|-----------------------------|---------|
 |usecols=[ ]|read particular column only  |[1](https://www.youtube.com/)|
 |nrows=500  |skip first 500 rows          |         |
-|hello      |                             |         |
+|     |                             |         |
 
 * **df.shape** - Pandas attribute(not a method) use to find the shape of a dataframe df
 * **df.columns** - Pandas attribute use to find the columns of a dataframe df
@@ -39,16 +39,32 @@ Data manipulation library built on the top of Numpy and Matplotlib.
 * **df.drop_duplicates(subset=[colA,colB])** - Removing duplicate items from columns
 * **df[col].value_counts(sort=True)** - count categorical data in a column [col] 
 
-|parameters | used cases                  |Example  |
-|-----------|-----------------------------|---------|
-|sort=True  |use to sort categorical data in a col. based upon count| |
+|parameters    | used cases                  |Example  |
+|--------------|-----------------------------|---------|
+|sort=True     |use to sort categorical data in a col. based upon count| |
 |normalize=True|normalizing categorical data count| |
 
 * **df.groupby()** - 
 
-|method     |used program                 |Example  |
-|-----------|-----------------------------|---------|
-|`.mean()`  | `df.groupby('categorical_col')["numerical_col(s)"].mean()` |  |
-|`.max() .min() .sum()`|`df.groupby("cat. col")["num_col(s)"].agg([max,min,sum])`|  |
-|  | `df.groupby(['cat.ColA','cat.ColB'])["num_col(s)"].mean()`|  |
-|  |`df.groupby('cat.Col')[['num_colA','num_colB']].agg([min,max,np.mean,np.median])`|  |
+|method                |used program                 |Example  |comment |
+|----------------------|-----------------------------|---------|--------|
+|`.mean()`             |type1`df.groupby('categoricalCol')["numericalCol"].mean()` ||type1 of `.groupby` ~ type1 of `.pivot_table`|
+|`.max() .min() .sum()`|2`df.groupby("catCol")["numCol"].agg([max,min,sum])`       |||
+|                      |3`df.groupby(['catColA','catColB'])["numCol"].mean()`      |||
+|using numpy func      |`df.groupby('catCol')[['numColA','numColB']].agg([min,max,np.mean,np.median])`|||
+
+* **df.pivot_table()** - 
+
+|parameters    |used program                 |Example  |Comment|
+|--------------|-----------------------------|---------|-------|
+|default-mean()|type1 `df.pivot_table(values="numCol",index="catCol")`            |||
+|`aggfunc`     |1`df.pivot_table(values="numCol",index="CatCol",aggfunc=np.mean)` |||
+|              |2`df.pivot_table(values="numCol",index="CatCol",aggfunc=[np.mean,np.median])`  |||
+| `columns`    |3`df.pivot_table(values="numCol",index="catColA",columns=catColB)`|||
+| `fill_value` |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0)`||filling value inplace of NaN, not a problem in .`groupby`|
+| `margins`    |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0,margins=True)`||margins=True for getting mean in last column|
+
+
+
+
+
