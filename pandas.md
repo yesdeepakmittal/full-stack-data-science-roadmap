@@ -51,3 +51,4 @@ Data manipulation library built on the top of Numpy and Matplotlib.
 |`.mean()`  | `df.groupby('categorical_col')["numerical_col(s)"].mean()` |  |
 |`.max() .min() .sum()`|`df.groupby("cat. col")["num_col(s)"].agg([max,min,sum])`|  |
 |  | `df.groupby(['cat.ColA','cat.ColB'])["num_col(s)"].mean()`|  |
+|  |`df.groupby('cat.Col')[['num_colA','num_colB']].agg([min,max,np.mean,np.median])`|  |
