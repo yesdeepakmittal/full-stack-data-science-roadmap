@@ -84,6 +84,6 @@ Data manipulation and transformation library built on the top of *Numpy* and *Ma
 
 |Join    | Function                                           | Example |
 |--------|----------------------------------------------------|---------|
-|Inner   |df1.merge(df2,on="commonCol",suffixes=["_s1","_s2"])|         |
+|Inner   |df1.merge(df2,on="commonCol",suffixes=["_s1","_s2"])|`df1.merge(df2, on='commonCol', suffixes=('_s1','_s2')).aggregate({"ColName":"count"})`|
 
 
