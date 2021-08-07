@@ -33,7 +33,7 @@ Data manipulation and transformation library built on the top of *Numpy* and *Ma
 * **df[col].quantile()**
 * **df[col].sum()**
 * **df[col].describe()** - Computes summary statistics about numerical columns
-* **df['height'].agg(pct60)** - aggregate | `def pct60(col): return col.quantile(0.6)` | `df[[colA,colB]].agg(pct60)` | `df[colA].agg([pct60,pct70])` | `def IQR(col): col.quantile(0.75) - col.quantile(0.25)`
+* **df['height'].agg(pct60)** - aggregate | `def pct60(col): return col.quantile(0.6)` | `df[[colA,colB]].agg(pct60)` | `df[colA].agg([pct60,pct70])` | `def IQR(col): col.quantile(0.75) - col.quantile(0.25)`| `df.groupby('CategoricalCol').agg({'NumCol':'count'})`
 * **df[colA].cumsum()** - cumulative sum
 * **df[colA].cummax()** - cumulative maximum
 * **df[colA].cummin()** - cumulative minimum
