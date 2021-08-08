@@ -1,7 +1,7 @@
 ## Pandas
 Data manipulation and transformation library built on the top of *Numpy* and *Matplotlib*. 
 
-### Used Functions in different coding part
+### Used Functions in different programs
 * **pd.DataFrame()** - Preparaing a pandas dataframe
 * **pd.read_csv()**- Use to read csv files.
 
