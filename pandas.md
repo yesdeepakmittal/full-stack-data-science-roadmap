@@ -82,8 +82,12 @@ Data manipulation and transformation library built on the top of *Numpy* and *Ma
 * **df.isna().sum().plot(kind='bar')**
 * **Joins**
 
-|Join    | Function                                           | Example |
-|--------|----------------------------------------------------|---------|
-|Inner   |df1.merge(df2,on="commonCol",suffixes=["_s1","_s2"])|`df1.merge(df2, on='commonCol', suffixes=('_s1','_s2')).aggregate({"ColName":"count"})`|
-
+|Join          | Function                                           | Example |comment|
+|--------------|----------------------------------------------------|---------|-------|
+|Inner(default)|df1.merge(df2,on="commonCol",suffixes=["_s1","_s2"])|`df1.merge(df2, on='commonCol', suffixes=('_s1','_s2')).aggregate({"ColName":"count"})`| |
+|Left          |df1.merge(df2,on='commonCOl',how='left')            |         |       |
+|Right         |df1.merge(df2,how='right',left_on="A",right_on="B")|         |if common col have *different* name if two dfs|
+|Outer         |df1.merge(df2,on='commonCOl',how='Outer')          |         |       |
+|Self          |df.merge(df,left_on='A',right_on='B',suffixes=["_s1","_s2"])||       |
+|on index      |`df1.merge(df2,left_on='A',left_index=True,right_on='B',right_index=True)` `df1.merge(df2,left_index=True,right_index=True)`|||
 
