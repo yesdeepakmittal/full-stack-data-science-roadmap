@@ -70,6 +70,7 @@ Data manipulation and transformation library built on the top of *Numpy* and *Ma
 | `fill_value` |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0)`||replace missing value with real(imputation), not a problem in .`groupby`|
 | `margins`    |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0,margins=True)`||getting mean in last column excluding missing value(or imputed by fill_value)|
 
+* **df.melt[melt](id_vars=[categoricalCol(s)],value_vars=[numCol(s)],var_name=[xyz],value_name=abc)** - *unpivoting table*
 * **df.set_index('colName')** - df.set_index([colA,colB]) - multi-level index(or hierarchical index) | access - df.loc[[list of tuples of multilevel indexes]]
 * **df.reset_index()** - reset your index of the dataframe | **df.reset_index(drop=True)** - for dropping the previous index
 * **df.sort_index()** - df.sort_index(level=[colA,colB],ascending=[False,False])
@@ -93,4 +94,9 @@ Data manipulation and transformation library built on the top of *Numpy* and *Ma
 
 * **df.concat([df1,df2,df3],ignore_index=True)** - df.concat([df1,df2,df3],ignore_index=True,join='inner',keys=["df1K1",'k2','k3'])(show columns that are in all tables)
 * **df.append([df1,df2,df3],ignore_index=True)**
-* 
+* **pd.merge_ordered(df1,df2,on='commonCol',suffixes=["_s1","_s2"],fill_method='ffill')** - ffill(forward fill) is a method to fill all missing value with previous one(defalut-'outer join' check it)
+* **[pd.merge_asof][merge_asof](df1,df2,on='col',suffixes=["_s1","_s2"],direction='forward')** 
+
+
+[merge_asof]: https://pandas.pydata.org/pandas-docs/version/0.25.0/reference/api/pandas.merge_asof.html
+[melt]: https://pandas.pydata.org/docs/reference/api/pandas.melt.html
