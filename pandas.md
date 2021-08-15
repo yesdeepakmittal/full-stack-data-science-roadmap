@@ -91,3 +91,6 @@ Data manipulation and transformation library built on the top of *Numpy* and *Ma
 |Self          |df.merge(df,left_on='A',right_on='B',suffixes=["_s1","_s2"])||       |
 |on index      |`df1.merge(df2,left_on='A',left_index=True,right_on='B',right_index=True)` `df1.merge(df2,left_index=True,right_index=True)`|||
 
+* **df.concat([df1,df2,df3],ignore_index=True)** - df.concat([df1,df2,df3],ignore_index=True,join='inner',keys=["df1K1",'k2','k3'])(show columns that are in all tables)
+* **df.append([df1,df2,df3],ignore_index=True)**
+* 
