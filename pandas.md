@@ -18,6 +18,7 @@ Data manipulation and transformation library built on the top of *Numpy* and *Ma
 * **df.head()** - `df.head(5)` print first 5 rows of a dataframe
 * **df.tail()** - `df.tail(5)` print last 5 rows of a dataframe
 * **df.info()** - Get info whether a dataframe has any null object
+* **df['textField'].str.contains('anyWord',case=False)** - Calculate how many times a particular word appered in each row of a dataframe df['textField'] and make case insensitive.
 * **df.isna()** - checking for the number of missing values | `df.isna().sum()` | `df.isna().any()`
 * **df.dropna()** - remove rows containing missing values
 * **df.fillna(0)** - fill 0 for all missing values in a df
