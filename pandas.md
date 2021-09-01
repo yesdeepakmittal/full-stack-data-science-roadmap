@@ -72,6 +72,7 @@ Data manipulation and transformation library built on the top of *Numpy* and *Ma
 | `fill_value` |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0)`||replace missing value with real(imputation), not a problem in .`groupby`|
 | `margins`    |3`df.pivot_table(values="numCol",index="catColA",columns=catColB,fill_value=0,margins=True)`||getting mean in last column excluding missing value(or imputed by fill_value)|
 
+* **df.unstack(level=1)** - unstacking a grouped by dataframe
 * **[df.melt][melt](id_vars=[categoricalCol(s)],value_vars=[numCol(s)],var_name=[xyz],value_name=abc)** - *unpivoting table*
 * **df.set_index('colName')** - df.set_index([colA,colB]) - multi-level index(or hierarchical index) | access - df.loc[[list of tuples of multilevel indexes]]
 * **df.reset_index()** - reset your index of the dataframe | **df.reset_index(drop=True)** - for dropping the previous index
