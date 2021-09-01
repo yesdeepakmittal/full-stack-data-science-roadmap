@@ -5,3 +5,5 @@
 * **plt.xticks(rotation=45)**
 * **plt.show()**
 * **plt.ylim(0)**
+* **plt.legend(loc='upper right',labels=df.columns.values)**
+* 
