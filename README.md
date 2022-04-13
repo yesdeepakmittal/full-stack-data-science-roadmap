@@ -10,7 +10,7 @@
 
 ### Continuous Probability Distribution
 1. [Uniform Distribution]
-2. [Normal Distribution]
+2. [Normal Distribution](./Distributions/Normal_Distribution.ipynb)
 3. [Standard Normal Distribution]
 4. [Exponential Distribution]
 5. Others
