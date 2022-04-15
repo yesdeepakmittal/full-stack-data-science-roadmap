@@ -10,7 +10,7 @@
 
 ### Continuous Probability Distribution
 1. [Uniform Distribution]
-2. [Normal Distribution](./Distributions/Normal_Distribution.ipynb)
+2. [Normal Distribution](./Distributions/Normal_Distribution.ipynb)  | [Blog](https://statsandr.com/blog/do-my-data-follow-a-normal-distribution-a-note-on-the-most-widely-used-distribution-and-how-to-test-for-normality-in-r/#what-is-a-normal-distribution)
 3. [Standard Normal Distribution]
 4. [Exponential Distribution]
 5. [Log Normal Distribution](./Distributions/LogNormal_Distribution.ipynb)
