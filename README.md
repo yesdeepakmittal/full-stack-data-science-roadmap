@@ -16,3 +16,10 @@
 5. [Log Normal Distribution](./Distributions/LogNormal_Distribution.ipynb)
 6. Others
     - [Normality Check](./Distributions/Normality_check.ipynb)
+
+### Hypothesis Testing & Confidence Interval
+- [Finding Confidence Intervals for a data](./Hy_CI/Calculate_CI.ipynb)
+
+
+### Reading Material
+- [statsandr.com](https://statsandr.com/blog/)
