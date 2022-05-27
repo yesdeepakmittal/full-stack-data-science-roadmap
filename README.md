@@ -3,7 +3,7 @@
 # Distributions
 ### Discrete Probability Distributions
 1. [Bernoulli Distribution]
-2. [Binomial Distribution](./Distributions/Binomial_Distribution.ipynb)
+2. [Binomial Distribution](./Distributions/Binomial_Distribution.ipynb) | flights Overbooking example
 3. [Poisson Distribution]
 4. Others
     - [Dice Game & Distribution for discreted r.v.](./Distributions/dice.ipynb)
