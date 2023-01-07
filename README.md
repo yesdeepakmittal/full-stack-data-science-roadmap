@@ -21,6 +21,9 @@
 - [Finding Confidence Intervals for a data](./Hy_CI/Calculate_CI.ipynb)
 - [Coin is fair or not](./Hy_CI/Coin_is_fair.ipynb)
 
+### Other stats
+- [Standarization - Calculating Z-Score](./Other-stats/Standardization.py)
+
 
 ### Reading Material
 - [statsandr.com](https://statsandr.com/blog/)
