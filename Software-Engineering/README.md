@@ -14,9 +14,11 @@
 
 - 3. Object Oriented Programming
 
-- 4. Quality Code Writing & Best Practice
+- 4. Flask & API Development
 
-- 5. Resource Planning for Application Deployment
+- 5. Quality Code Writing & Best Practice
+
+- 6. Resource Planning for Application Deployment
 
 ---
 Other Helpful links

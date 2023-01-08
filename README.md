@@ -5,7 +5,7 @@
 - [Software Engineering](./Software-Engineering/)
 - [Data Visualization & Interpretation](./Data-Visualization/)
 - [Databases](./Databases/)
-- [API Development & Data Collection](./API-and-Data-Collection/)
+- [Data Collection](./Data-Collection/)
 - [MLOps](./MLOps/)
 - [Business Awareness and Use Cases](./Business-Awareness/)
 
