@@ -8,3 +8,5 @@
 - [API Development & Data Collection](./API-and-Data-Collection/)
 - [MLOps](./MLOps/)
 - [Business Awareness and Use Cases](./Business-Awareness/)
+
+![Full-Stack-Data-Science](./Assets-and-datasets/yesdeepakmittal.png)
