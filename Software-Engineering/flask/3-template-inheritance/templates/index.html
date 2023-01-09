@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h3>Hello, Everyone!</h3>
+    {% for company in companies %}
+    <h1>Company Name is {{ company.Name}}</h1>
+    <h3>Country of Origin is {{ company.Country }}</h3>
+    <h3>Stock Ticker is {{ company.Ticker }}
+    {% endfor %}
+{% endblock content %}
+
+<!-- 
+    - title is not passed, it should show the default title [ELSE case]
+ -->

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+    <h3>Hello, Everyone!</h3>
+    {% for company in companies %}
+    <h1>Company Name is {{ company.Name}}</h1>
+    <h3>Country of Origin is {{ company.Country }}</h3>
+    <h3>Stock Ticker is {{ company.Ticker }}
+    {% endfor %}
+</body>
+</html>
