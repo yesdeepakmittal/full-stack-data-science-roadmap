@@ -6,7 +6,8 @@
 - 2. Data Structure & Algorithms | [Practice Questions](https://github.com/yesdeepakmittal/interview-corner)
     - Bit Manipulations
     - Arrays
-    - Sorting
+    - Searching - Linear, Binary, interpolation
+    - Sorting - Bubble, Merge, Count, Insertion
     - Hashing
     - Recursion
     - Linked List
@@ -16,7 +17,7 @@
 
 - 4. Backend & API Development
     - Flask(WSGI)
-    - FaskAPI(ASGI)
+    - FastAPI(ASGI)
 
 - 5. Quality Code Writing & Best Practice
 
