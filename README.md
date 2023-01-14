@@ -2,7 +2,7 @@
 
 - [Maths and Statistics](./Maths-and-Statistics/)
 - [Machine Learning & Deep Learning](./Machine-Learning-Deep-Learning/)
-- [Software Engineering](./Software-Engineering/)
+- [Programming & Software Engineering](./Programming-Software-Engineering/)
 - [Data Visualization & Interpretation](./Data-Visualization/)
 - [Databases](./Databases/)
 - [Data Collection](./Data-Collection/)
@@ -10,3 +10,7 @@
 - [Business Awareness and Use Cases](./Business-Awareness/)
 
 ![Full-Stack-Data-Science](./Assets-and-datasets/yesdeepakmittal.png)
+
+# Some Amazing Books & References
+- Building Data Science Applications with FastAPI(Packt Publication)
+- ChatGPT 😆
