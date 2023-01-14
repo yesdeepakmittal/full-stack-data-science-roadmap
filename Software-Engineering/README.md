@@ -1,9 +1,8 @@
 ### Software Engineering
-- 1. Python Basics
+1. **Python Basics**
     - Lists & Tuples
     - Sets & Dictionary
-
-- 2. Data Structure & Algorithms | [Practice Questions](https://github.com/yesdeepakmittal/interview-corner)
+2. **Data Structure & Algorithms** | [Practice Questions](https://github.com/yesdeepakmittal/interview-corner)
     - Bit Manipulations
     - Arrays
     - Searching - Linear, Binary, interpolation
@@ -13,15 +12,15 @@
     - Linked List
     - Tree
 
-- 3. Object Oriented Programming
+3. **Object Oriented Programming**
 
-- 4. Backend & API Development
+4. **Backend & API Development**
     - Flask(WSGI)
     - FastAPI(ASGI)
 
-- 5. Quality Code Writing & Best Practice
+5. **Quality Code Writing & Best Practice**
 
-- 6. Resource Planning for Application Deployment
+6. **Resource Planning for Application Deployment**
 
 ---
 Other Helpful links
