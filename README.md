@@ -12,5 +12,5 @@
 ![Full-Stack-Data-Science](./Assets-and-datasets/yesdeepakmittal.png)
 
 # Some Amazing Books & References
-- Building Data Science Applications with FastAPI(Packt Publication)
+- \[Book\]Building Data Science Applications with FastAPI(Packt Publication)
 - ChatGPT 😆
