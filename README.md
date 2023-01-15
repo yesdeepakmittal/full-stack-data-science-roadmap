@@ -9,7 +9,7 @@
 - [MLOps](./MLOps/)
 - [Business Awareness and Use Cases](./Business-Awareness/)
 
-![Full-Stack-Data-Science](./Assets-and-datasets/yesdeepakmittal.png)
+![Full-Stack-Data-Science](./Other-stuff/Assets/yesdeepakmittal.png)
 
 # Some Amazing Books & References
 - \[Book\]Building Data Science Applications with FastAPI(Packt Publication)
