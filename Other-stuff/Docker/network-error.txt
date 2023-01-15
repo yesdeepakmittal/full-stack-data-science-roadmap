@@ -1,0 +1,1 @@
+$ sudo service docker restart           |connecting with bridge n/w

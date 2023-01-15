@@ -1,0 +1,23 @@
+Installing Prerequisties
+$ sudo apt-get install \
+> apt-transport-https \      									 				  						|machine can talk over https
+> ca-certificates \    		  								
+> curl \					  
+> software-properties-common  																			|contains some goLang objects which Docker uses
+
+
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -                          |fsSL will keep the o/p as OK only
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu (lsb_release -cs) stable"
+
+$ sudo apt-get update                									     							| update again
+$ sudo apt-get install docker-ce 												 						| installing docker of community edition
+
+------------------------------------------------------------------------------------------------------------------
+-> sudo docker run hello-world
+-> docker run nginx:latest         												 						| running & downloading(if not present already) nginx server image
+-> docker images															 							| listing out all docker images present
+-> docker container run -itd --name web-server-nginx -p 8080:80 nginx:latest        					| running container with name web-server-nginx and mapping our machine port 8080 with container port 80
+
+check localhost:8080 in your browser to check whether the docker image is running | make sure to stop the local nginx server first using command - $ systemctl stop nginx
+
+-> docker ps -a																							| Checking all the running Docker images

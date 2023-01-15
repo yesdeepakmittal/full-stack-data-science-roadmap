@@ -1,0 +1,63 @@
+[DOCKER COMPOSE]
+
+Fetching the binary of Docker Compose & store it in docker-compose directory of our host m/c
+$ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+ref - https://docs.docker.com/compose/install/other/
+
+Making binaries executable
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+$ docker compose --version
+
+------------------------------------------------------------------------------------------------------------------
+docker-compose.yaml
+------------------------------------------------------------------------------------------------------------------
+version: '3.3'
+services:
+   db:
+     image: mysql:5.7
+     container_name: mysql_database
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: word@press
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: abc@123
+
+   wordpress:   
+     depends_on:
+       - db
+     image: wordpress:latest
+     container_name: wd_frontend
+     volumes:
+       - wordpress_files:/var/www/html 
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: abc@123
+volumes:
+    wordpress_files:
+    db_data:
+------------------------------------------------------------------------------------------------------------------
+$ docker-compose up -d 
+$ docker exec -it mysql_database bash
+
+$ docker network connect bridge mysql_database                           | connecting docker with bridge n/w
+$ docker run -it --link mysql_database:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
+
+------------------------------------------------------------------------------------------------------------------
+[DOCKER CLI]
+$ docker-compose config --services 										 | all services running in the current compose file
+$ docker-compose --help
+$ docker-compose logs --tail=10
+$ docker-compose ps
+$ docker-compose top												   	 |display all the running PROCESSES inside all of the containers
+$ docker-compose down 													 |shutting down and removing all the services and other compose resources
+
+------------------------------------------------------------------------------------------------------------------
+

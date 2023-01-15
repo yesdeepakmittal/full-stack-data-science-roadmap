@@ -1,0 +1,69 @@
+$ docker search python:3.6   															  |Search on Docker Hub for python & 3.6
+$ docker search --filter "is-official=true" registry									  | searching official image of registry image on DockerHub using filter
+$ docker search --format "table {{.Name}}\t{{.Description}}\t{{.IsOfficial}}" registry    | formatting the search result of docker search
+
+$ docker images ubuntu:16.04															  | only specific image result
+$ docker images --no-trunc ubuntu:16.04
+
+$ docker image pull nginx:alpine
+
+[DEBUGGING DOCKER IMAGE]
+$ docker image inspect image_name:image_tag												  | returns detailed image build in json
+$ docker tag nginx:latest yesdeepakmittal/test:latest     								  |tagging other images with new TAG and NAME[yesdeepakmittal/test:latest] - Just an alias phww!
+$ docker image inspect --format "{{.RepoTags}} : {{.RepoDigests}} " test:latest			  | formatting the inspect result
+$ docker image inspect --format "{{json .Config}}" test > inspect_report_ubuntu.txt       | Saving the inspect result into a txt file
+$ docker image history test_image														  |intermediate layers of this image 
+
+------------------------------------------------------------------------------------------------------------------
+[DOCKER REMOVE & PRUNING]
+$ docker image rm img_name:img_tag
+$ docker rmi img_id_ -f 																  |forcefully deleting the image using image id
+$ docker rmi img_id_ -force 
+
+$ docker container rm container_name
+$ docker container rm id1 id2 id3														  | removing many containers simultaneously
+$ docker container rm cont_name --force 												  | removing running containers
+$ docker container kill --signal=SIGTERM container_name
+$ docker container prune 																  | removing all the stopped containers together
+
+$ docker images rm $(docker images)														  | removing all docker images
+$ docker stop $(docker ps -aq)															  | Stopping all docker containers
+$ docker rm $(docker ps -aq)															  | removing all docker containers
+$ docker network prune 																	  | removing all docker network
+$ docker volume prune																	  | removing all docker volumes
+
+------------------------------------------------------------------------------------------------------------------
+[DOCKER CREATE V/S RUN]
+$ docker container create -it --name img_a busybox:latest
+$ docker container run -itd --rm --name img_b busybox:latest
+$ docker container start img_a
+
+$ docker container stop img_b
+$ docker ps -a
+$ docker container rename img_a new_img_a
+$ docker container attach new_img_a 													  | running container & take i/p o/p from terminal
+
+------------------------------------------------------------------------------------------------------------------
+[MAPPING PORTS]
+$ docker container run -itd --name my_container_name -p 8080:80/tcp my_img_name     	  | mapping our m/c port 8080 with container port 80/tcp 
+$ docker container run -itd --name my_container_name -P my_img_name						  | Allow Docker to map ports by itself. It'll use the info provided by EXPOSE command in Dockerfile
+$ docker container port my_container_name
+
+------------------------------------------------------------------------------------------------------------------
+[DOCKER NETWORK]
+$ docker network create --driver bridge my-bridge
+$ docker network create --driver bridge --subnet=192.168.0.0/16 --ip-range=192.168.5.0/24 my-bridge-1
+$ docker network ls
+$ docker network ls --filter driver=bridge 											 	  |filtering only results containing bridge driver only
+$ docker network connect my-bridge-1 my-container										  | connecting network with running container
+$ docker container inspect my-container
+
+------------------------------------------------------------------------------------------------------------------
+[DOCKER STORAGE]
+$ docker volume create vol-busybox
+$ docker run -d --volume vol-ubuntu:/tmp ubuntu											  |running ubuntu container and mounting volume on /tmp directory
+$ docker volume ls
+$ docker volume ls --filter "dangling=true"												  | unmounted volumes
+$ docker run -it --name cont-ubuntu --volume vol-ubuntu:/var/log ubuntu:latest			  |running ubuntu container and mounting volume in directory /var/log of container. | check these files in host m/c in dir /var/lib/docker/volumes/
+$ docker container inspect --format "{{json .Mounts}}" cont-ubuntu | python -m json.tool		| inpecting & formatting the container response
+

@@ -1,0 +1,73 @@
+https://www.youtube.com/watch?v=0H2miBK_gAk
+
+
+fast-api-app
+	|requirements.txt
+  |Dockerfile
+  |src
+  |	|-main.py
+  
+  
+requirements.txt
+-----------------
+fastapi
+uvicorn
+
+
+src/main.py
+-----------------
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
+Dockerfile
+--------------------
+FROM python:3.10-slim
+
+WORKDIR /code 		-- working dir in container
+
+COPY ./requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt             
+
+COPY ./src ./src
+
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port","80","--reload"]
+
+
+$ docker build -t fastapi-image
+$ docker run -itd --name fastapi-container -p 80:80 fastapi-image
+$ docker stop fastapi-container
+$ docker rm fastapi-container
+------------------------------------------------------------------------------------------------------------
+Since Python app is running inside the container, any changes made in the app file will not be reload into the app until we will remove the container, build the image again, and run a new container.
+To solve this problem, make a new Volume in the container and put your file there. Any update to the Python file will be synced with the file running in the container.
+Reload flag is already added in Docker CMD command
+
+Make your WORKING DIR($ pwd) as a volume of your container, and map it with the WORKING DIR of CONTAINER(/code here).
+$ docker run --name fastapi-container2 -p 80:80 -d -v $(pwd):/code fastapi-image
+
+------------------------------------------------------------------------------------------------------------
+compose version issue - https://stackoverflow.com/a/63570531
+
+docker-compose.yml
+--------------------------------------------------------------------------------
+version: "3"
+services:
+  app:
+    build: .
+    container_name: python-server
+    command: uvicorn src.main:app --host 0.0.0.0 --port 80 --reload
+    ports:
+      - 80:80
+    volumes:
+      - .:/code
+      
+      
+$ docker-compose up -d
+--------------------------------------------------------------------------------

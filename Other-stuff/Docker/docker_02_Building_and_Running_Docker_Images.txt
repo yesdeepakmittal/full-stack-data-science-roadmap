@@ -1,0 +1,70 @@
+$ touch Dockerfile     					|Creating a file named Docerfile w/o extension
+$ nano Dockerfile
+
+	ARG CODE_VERSION=16.04
+ 	FROM ubuntu:${CODE_VERSION}
+	RUN apt-get update -y
+ 	CMD ["bash"]
+
+$ cat Dockerfile						| Checking the Dockerfile once
+$ docker build -t img_from .			| building docker image from current directory
+$ docker images							| checking all the docker images
+$ docker run -it img_from				| running in interactive mode
+$ exit      							| after using the install Docker ubuntu image
+
+-------------------------------------------------------------------------------------------------------
+
+FROM ubuntu:16.04
+
+LABEL Creator: "Cerulean Canvas"		
+
+RUN apt-get update && apt-get install -y curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /home/Codes					|Making directory inside base image(Ubuntu 16.04) not in host OS
+
+ENV USER Cerulean-Canvas    			|Setting environment variables
+ENV SHELL /bin/bash
+ENV LOGNAME Cerulean-Canvas
+
+CMD ["bash"]
+
+--------------------------------------------------------------------------------------------------------------------
+[RUNNING EXISTING IMAGE WITH NEW NAME]
+
+$ docker run -itd --name kuch_bhi_new_name img_from      		| -itd means interactive, teletype enabled, detached
+$ docker exec -it kuch_bhi_new_name
+
+--------------------------------------------------------------------------------------------------------------------
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get install nginx -y \ 								| && is a binary AND operator, so one by one command will execute
+&& apt-get clean\
+&& rm -rf /var/lib/lists/*                                      | It will clear up local depositories of retrieve packages
+
+EXPOSE 80                                                       |inform Docker about the port on which container is listening        
+ 
+CMD ["nginx","-g","daemon off;"]																|nginx app will run in foreground by turning off nginx as daemon process
+
+
+$ docker build -t img_expose .
+$ docker run -itd --rm --name cont_expose -p 8080:80 img_expose      | --rm will remove the container after it will be stopped
+
+--------------------------------------------------------------------------------------------------------------------
+FROM ubuntu:12.04
+
+LABEL Creator: "Cerulean Canvas"
+
+RUN apt-get update && apt-get install -y apache2 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+
+EXPOSE 80
+
+CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+--------------------------------------------------------------------------------------------------------------------
