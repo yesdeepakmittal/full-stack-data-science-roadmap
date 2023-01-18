@@ -1,0 +1,2 @@
+$ hostnamectl set-hostname XYZ              | setting hostname of a ubuntu machine 
+$ bash
