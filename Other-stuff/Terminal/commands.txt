@@ -1,2 +1,11 @@
 $ hostnamectl set-hostname XYZ              | setting hostname of a ubuntu machine 
 $ bash
+
+
+[RQ/RS]
+$ curl -i http://127.0.0.1:5000/students                        |default GET request   -X sets RQ method
+$ curl -i http://127.0.0.1:5000/students -X GET 
+$ curl -i http://127.0.0.1:5000/students -X POST -H 'Content-Type: application/json' -d '{"name":"Deepak","city":"Meerut"}'
+$ curl -i http://127.0.0.1:5000/students/5 -X DELETE
+
+

@@ -23,5 +23,10 @@
 6. **Resource Planning for Application Deployment**
 
 ---
-Other Helpful links
-- https://github.com/yesdeepakmittal/interview-corner
+Other Helpful links & References
+- [REST + Flask + FastAPI Demo Application](https://realpython.com/api-integration-in-python/)
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Starlette - ASGI framework](https://www.starlette.io/)
+- [Pydantic](https://docs.pydantic.dev/usage/models/)
+- [Flask - Corey Schafer Flask Youtube playlist](https://www.youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)
+- [Flask - Real Python](https://realpython.com/flask-connexion-rest-api/)

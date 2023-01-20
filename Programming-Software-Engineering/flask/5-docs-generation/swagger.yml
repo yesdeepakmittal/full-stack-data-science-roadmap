@@ -1,0 +1,19 @@
+openapi: 3.0.0
+info:
+  title: "Any random title"
+  description: "phew!"
+  version: "1.0.0"
+
+servers:
+  - url: "/myapi"
+
+paths:
+  /students:
+    get:            #REST API Endpoint     /myapi/students
+      operationId: "students.all_students"
+      tags:
+        - "students-tag"
+      summary: "summary phew!"
+      responses:
+        "200":
+          description: "GET Done!"
