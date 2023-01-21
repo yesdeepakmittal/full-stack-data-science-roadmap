@@ -29,4 +29,4 @@ Other Helpful links & References
 - [Starlette - ASGI framework](https://www.starlette.io/)
 - [Pydantic](https://docs.pydantic.dev/usage/models/)
 - [Flask - Corey Schafer Flask Youtube playlist](https://www.youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)
-- [Flask - Real Python](https://realpython.com/flask-connexion-rest-api/)
+- [Flask with Swagger UI - Real Python](https://realpython.com/flask-connexion-rest-api/)

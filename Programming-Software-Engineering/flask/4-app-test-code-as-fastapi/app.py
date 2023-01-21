@@ -4,8 +4,9 @@ app = Flask(__name__)
 
 students = [
     {"roll_no": 1, "name": "Deepak", "city": "Meerut"},
-    {"roll_no": 2, "name": "Avika", "city": "Meerut"},
-    {"roll_no": 3, "name": "Kamini-Sharma", "city": "Meerut"},
+    {"roll_no": 2, "name": "Avika-Sharma", "city": "Meerut"},
+    {"roll_no": 3, "name": "Sarvagya-Mittal", "city": "Meerut"},
+    {"roll_no": 4, "name": "Janaki-Mittal", "city": "Meerut"},
 ]
 
 def next_roll_no():

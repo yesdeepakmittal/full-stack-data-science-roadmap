@@ -7,6 +7,28 @@ info:
 servers:
   - url: "/myapi"
 
+components:
+  schemas:
+    Student:
+      type: "object"
+      required:
+        - name
+      properties:
+        name:
+          type: "string"
+        city:
+          type: "string"
+  
+  parameters:
+    roll_no:
+      name: 'roll_no'
+      description: 'fetching student detail'
+      in: path
+      required: True
+      schema:
+        type: 'integer'
+
+
 paths:
   /students:
     get:            #REST API Endpoint     /myapi/students
@@ -17,3 +39,55 @@ paths:
       responses:
         "200":
           description: "GET Done!"
+    
+    post:
+      operationId: "students.add_student"
+      tags:
+        - students
+      summary: "post summary phew!"
+      requestBody:
+          description: "post description"
+          required: True
+          content:
+            application/json:
+              schema:
+                x-body-name: "rqst"
+                $ref: "#/components/schemas/Student"
+      responses:
+        "201":
+          description: "ho gya add"
+  /students/{roll_no}:
+    get:
+      operationId: 'students.only_student'
+      parameters:
+        - $ref: "#/components/parameters/roll_no"
+      responses:
+        "200":
+          description: "Student record fetched"
+    
+    put:
+      tags:
+        - students
+      operationId: 'students.update_student'
+      summary: 'put summary'
+      parameters:
+        - $ref: "#/components/parameters/roll_no"
+      responses:
+        "200":
+          description: "record updated"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: "rqst"
+              $ref: "#/components/schemas/Student"
+    delete:
+      operationId: 'students.delete_record'
+      parameters:
+        - $ref: "#/components/parameters/roll_no"
+      responses:
+        "200":
+          description: "record deleted"
+
+
+# reference - https://realpython.com/flask-connexion-rest-api/
