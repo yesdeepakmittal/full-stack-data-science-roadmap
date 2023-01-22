@@ -1,2 +1,5 @@
 $ python -m pip install uvicorn[standard]
-$ uvicorn app:app --reload
+$ uvicorn app:app --reload                          python-module-name : ASGI app instance(app in python module)
+
+
+Generating docs automatically - http://127.0.0.1:8000/docs
