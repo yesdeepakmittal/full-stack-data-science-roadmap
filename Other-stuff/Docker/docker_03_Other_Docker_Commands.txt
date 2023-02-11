@@ -19,6 +19,7 @@ $ docker image history test_image														  |intermediate layers of this im
 $ docker image rm img_name:img_tag
 $ docker rmi img_id_ -f 																  |forcefully deleting the image using image id
 $ docker rmi img_id_ -force 
+$ docker rmi $(docker images -q)         |removing all the docker images
 
 $ docker container rm container_name
 $ docker container rm id1 id2 id3														  | removing many containers simultaneously
