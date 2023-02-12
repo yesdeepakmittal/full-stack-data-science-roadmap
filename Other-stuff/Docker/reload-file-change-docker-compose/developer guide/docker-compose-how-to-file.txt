@@ -1,0 +1,18 @@
+$ docker-compose up --build     | building & running docker container
+
+In docker-compose file, volume is to copy all files from current dir [.] to [app] dir
+
+After running docker container, make a change to app.py file to check if reloading is working
+$ docker exec -it test-docker-cont bash
+
+Since the base OS of Python image is Debian 11, use below command to install Nano text editor to make change in app.py
+$ apt update
+$ apt install nano
+
+$ nano app.py 
+
+
+if you will make any change in any file and want to reload the application, install [watchfiles] and add the below arg in uvicorn command
+$  uvicorn app:app --host 0.0.0.0 --port 8443 --reload --reload-include *
+
+reference - https://stackoverflow.com/a/73215997/16470401

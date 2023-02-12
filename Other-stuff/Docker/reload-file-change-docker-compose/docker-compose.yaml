@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .            # building image before running container
+    container_name: test-docker-cont
+    command: uvicorn app:app --host 0.0.0.0 --port 8443 --reload --reload-include * #if any file will change, uvicorn server will restart
+    ports:
+      - 8443:8443
+    volumes:
+      - .:/app      # adding all the files from current dir [ . ] to app dir of the application as mentioned in Dockerfile
+
+
+
+
+
+# run this docker-compose file with below command
+# $ docker-compose up --build

@@ -1,0 +1,8 @@
+$ docker build -t test-docker .
+$ docker run -itd --rm -p 8443:8443 --name test-docker-cont test-docker
+
+$ docker logs test-docker-cont 				| get the server link for your app
+$ docker exec -it test-docker-cont bash     | get into the bash terminal
+Inside the bash terminal, you can test you application using $ wget http://localhost:8443/anotherurl   | or | $ wget http://0.0.0.0:8443/anotherurl
+ 
+Now you can access the application in host machine browser at http://localhost:8443/anotherurl
