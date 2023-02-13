@@ -5,6 +5,9 @@ WORKDIR /app
 
 COPY . .
 
+# Installing nano text editor in base OS(Debian 11)
+RUN apt update && apt install nano
+
 # Installing all the dependencies
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 

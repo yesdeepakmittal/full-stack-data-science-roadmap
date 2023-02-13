@@ -6,3 +6,4 @@
 - [Microservices Pros & Cons](https://yellow.systems/blog/microservices-pros-and-cons)
 - [Docker Essentials Course on Udemy](https://www.udemy.com/course/docker-essentials/)
 - [What is kubernetes?](https://youtu.be/TlHvYWVUZyc)
+- [Concurrency](https://www.youtube.com/watch?v=GpqAQxH1Afc)

@@ -1,0 +1,8 @@
+[RUNNING DOCKER CONTAINER]
+$ docker run --name test-docker-mysql -e MYSQL_ROOT_PASSWORD=my-pw -d mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+$ docker exec -it test-docker-mysql bash
+bash# mysql -uroot -p
+Enter password: my-pw
+
+SHOW DATABASES;

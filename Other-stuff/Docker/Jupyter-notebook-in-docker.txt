@@ -1,3 +1,6 @@
 $ docker run -d --rm -p 80:8888 -e JUPYTER_TOKEN=letmein jupyter/minimal-notebook
 
 ref: https://blog.ouseful.info/2019/02/11/connecting-to-a-remote-jupyter-notebook-server-running-on-digital-ocean-from-microsoft-vs-code/
+
+---------------------------------------------------------
+$ docker run -p 8888:8888 jupyter/minimal-notebook
