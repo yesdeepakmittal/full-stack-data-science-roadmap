@@ -1,0 +1,5 @@
+1. Create a new VM Instance in Compute Engine
+2. Edit VM Setting & Add a Public key in SSH section
+3. Generate a Public-Private key in local M/c using $ ssh-keygen
+4. whatever username is mentioned in the public key in the last, use it for login to the VM from local terminal
+5. $ ssh -i id_rsa username-mentioned-in-public-key@[External IP of VM]

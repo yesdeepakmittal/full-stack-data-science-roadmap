@@ -1,0 +1,7 @@
+1. [Google Container Registry] - https://console.cloud.google.com/gcr
+2. Select a project name. For ex: social-media-data-scripts
+3. Installed Google Cloud CLI in system - https://www.educative.io/answers/how-to-install-google-cloud-cli-on-windows
+4. Open Google Cloud SDK Shell - Which might be at [C:\Users\deepak-mittal\AppData\Local\Google\Cloud SDK]
+5. Configure Docker setting to start working with Google Cloud CLI[run this cmd in Google CLI] - $ gcloud auth configure-docker
+6. tag the image you want to push with gcr.io/project-name/image-name -> $ docker tag test-docker gcr.io/social-media-data-scripts/test-docker
+7. $ docker push gcr.io/social-media-data-scripts/test-docker
