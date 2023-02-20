@@ -1,0 +1,17 @@
+1. $ docker run -itd --name test-docker -p 8080:8080 jenkins/jenkins
+2. in browser, http://localhost:8080
+3. Login to jenkins [u can run the docker in -it mode and password will be printed directly]
+4. Add blue ocean plugin
+5. add pipelines
+
+add a new jenkins step to build a dockerimage
+$ docker build -t tag -f subdirectory/Dockerfile .
+
+
+use shell script to login to DockerHub 
+$ docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
+
+add jenkins ENV variables
+
+add a new jenkins step for pushing the Docker image
+$ docker push yesdeepakmittal/dockerimage:tag

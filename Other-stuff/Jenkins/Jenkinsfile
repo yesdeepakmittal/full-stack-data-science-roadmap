@@ -1,0 +1,104 @@
+pipeline{
+    agent any               //jenkinsfile can execute anywhere [Node,executor on Node] in master-slave architecture
+
+    // Declaring User-defined Env vars
+    environment{
+        PY_VERSION = '3.10.0'
+
+        // Credentials can be set in Jenkins GUI as ENV vars
+        USER = $(USER)              
+        PW = $(PW)
+
+        // If credentials are set in [credentials binding] plugin, use credentials() fn
+        APPLICATION_CREDENTIALS = credentials('credentialId')    // 'credentialId' is ID set while providing Credentials in plugin
+    }
+    
+    // tools to make corresponding commands available
+    tools{
+        python "Python"         // "Python" name from Manage plugins
+    }
+
+    parameters{
+        choice(name: 'VERSION',choices: ['3.5.1','3.7.5','3.10.0'],description: '')
+        booleanParam(name: 'executeTests',defaultValue: true, description: '')
+    }
+
+    stages{
+        stage("plan"){
+            steps{
+                echo "Planning..."
+                echo "Python Version Finalized ${PY_VERSION}"
+            }
+        }
+        stage("code"){
+            // this stage will only execute if it is either of below-mentioned branch   | BRANCH_NAME(or env.BRANCH_NAME) is env. var by Jenkins for branch name
+            when{
+                expression{
+                    BRANCH_NAME == 'test1' || BRANCH_NAME == 'test2-branch'
+                }
+            }
+            steps{
+                sh "python -m pip install tensorflow"
+                echo "Coding..."
+            }
+        }
+        stage("build"){
+            when{
+                expression{
+                    BRANCH_NAME == 'build-branch' && CODE_CHANGES == true    
+                }
+            }
+            steps{
+                echo "Building..."
+            }
+        }
+        stage("test"){
+            // Execute the test only if executeTest parameter is true
+            when{
+                expression{
+                    params.executeTests == true
+                }
+            }
+            steps{
+                echo "Testing..."
+            }
+        }
+        stage("package"){
+            steps{
+                echo "Packaging..."
+            }
+        }
+        stage("deploy"){
+            steps{
+                echo "Deploying..."
+                echo "Version Used is $(params.VERSION)"
+            }
+        }
+        stage("operate"){
+            steps{
+                echo "Operating..."
+            }
+        }
+        stage("monitor"){
+            steps{
+                echo "Monitoring..."
+            }
+        }
+    }
+
+    post{
+        always{
+            // it will execute irrespective of above steps
+        }
+        success{
+            // only if build success
+        }
+        failure{
+            // only if build failedf
+        }
+    }
+}
+
+
+
+// Reference: https://www.youtube.com/watch?v=7KCS70sCoK0
