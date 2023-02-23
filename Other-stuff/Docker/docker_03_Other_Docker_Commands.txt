@@ -7,6 +7,14 @@ $ docker images --no-trunc ubuntu:16.04
 
 $ docker image pull nginx:alpine
 
+[DOCKER IMAGES]
+$ docker build -t tag-name .                                                              |Dockerfile in the same directory
+$ docker build -f subdirectory-name/Dockerfile .                                          |Dockerfile in subdirectory
+
+[DOCKER LOGS]
+$ docker logs container_name
+$ docker logs container_name -f                                                           |Continous logs of docker
+
 [DEBUGGING DOCKER IMAGE]
 $ docker image inspect image_name:image_tag												  | returns detailed image build in json
 $ docker tag nginx:latest yesdeepakmittal/test:latest     								  |tagging other images with new TAG and NAME[yesdeepakmittal/test:latest] - Just an alias phww!
@@ -44,6 +52,8 @@ $ docker ps -a
 $ docker container rename img_a new_img_a
 $ docker container attach new_img_a 													  | running container & take i/p o/p from terminal
 
+$ docker start container_name
+$ sudo docker exec -u 0 -it container-name bash                                           | running container as root user
 ------------------------------------------------------------------------------------------------------------------
 [MAPPING PORTS]
 $ docker container run -itd --name my_container_name -p 8080:80/tcp my_img_name     	  | mapping our m/c port 8080 with container port 80/tcp 
