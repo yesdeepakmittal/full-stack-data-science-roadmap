@@ -1,5 +1,17 @@
+Connecting to VM using Private Key
+----------------------------------
 1. Create a new VM Instance in Compute Engine
 2. Edit VM Setting & Add a Public key in SSH section
 3. Generate a Public-Private key in local M/c using $ ssh-keygen
+    3.1. remove all the username and host from public key and simply mention one [user] in the end 
 4. whatever username is mentioned in the public key in the last, use it for login to the VM from local terminal
 5. $ ssh -i id_rsa username-mentioned-in-public-key@[External IP of VM]
+
+
+Issues in connecting to VM
+----------------------------------
+- Logging using root user
+    - Enable root login in /etc/ssh/sshd_config : PermitRootLogin yes
+    - Set root password in browser SSH window, $ sudo passwd
+    - $ ssh root@external_ip
+- SSH using private key issue - https://phoenixnap.com/kb/ssh-permission-denied-publickey
