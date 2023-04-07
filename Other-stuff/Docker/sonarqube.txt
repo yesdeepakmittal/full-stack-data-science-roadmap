@@ -1,0 +1,9 @@
+$ docker run -itd --name sonarqube -p 9000:9000 sonarqube:latest
+
+login the sonarqube at http://localhost:9000
+Username: admin
+Password: admin
+
+Create a manual project
+
+$ C:\Users\deepak-mittal\Desktop\sonar-scanner-cli-4.8.0.2856-windows\sonar-scanner-4.8.0.2856-windows\bin\sonar-scanner.bat -D"sonar.projectKey=project-name" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_b7418e30c6592c14062e62880e098ee54e235039"
