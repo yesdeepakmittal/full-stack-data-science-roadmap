@@ -1,7 +1,12 @@
-$ hostnamectl set-hostname XYZ              | setting hostname of a ubuntu machine 
+[USER]
+$ hostnamectl set-hostname XYZ                                  | setting hostname of a ubuntu machine 
 $ bash
 $ hostname
-
+$ hostname -I 
+$ whoami
+$ who 
+$ echo $USER 
+$ docker exec -u 0 -it container-name                           |[-u 0] with Root Privileges
 
 [RQ/RS]
 $ curl -i http://127.0.0.1:5000/students                        |default GET request   -X sets RQ method
@@ -9,13 +14,17 @@ $ curl -i http://127.0.0.1:5000/students -X GET
 $ curl -i http://127.0.0.1:5000/students -X POST -H 'Content-Type: application/json' -d '{"name":"Deepak","city":"Meerut"}'
 $ curl -i http://127.0.0.1:5000/students/5 -X DELETE
 
-
 [MEMORY DETAIL]
 $ df -h
+$ htop
 
 [SERVER]
 $ ssh user@hostip
-$ scp -r any_folder/ user@hostname:/home/user/target_folder    |copying folder on server to another server
-$ scp user@hostname:/home/Dockerfile .                         |downloading Dockerfile file from server to current folder in local m/c 
-$ rm -r *							                           | removing all files from current dir
+$ ssh -i private-key user@hostip
+$ scp -r any_folder/ user@hostname:/home/user/target_folder     |copying folder on server to another server
+$ scp user@hostname:/home/Dockerfile .                          |downloading Dockerfile file from server to current folder in local m/c 
+$ rm -r *							                            | removing all files from current dir
 $ ls my_folder/ | wc -l             |listing the number of files in my_folder | wc = wordcount
+
+[LOGS]
+$ ls -la
