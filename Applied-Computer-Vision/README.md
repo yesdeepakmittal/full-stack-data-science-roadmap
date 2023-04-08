@@ -12,3 +12,14 @@ Animated AI Youtube Playlist | https://animatedai.github.io/
 - [Convolution NN Visualization](https://youtu.be/JboZfxUjLSk)
 - [Convolution Explanation](https://youtu.be/jDe5BAsT2-Y)
 - [Backpropagation in CNN](https://youtu.be/z9hJzduHToc)
+
+---
+### Implementations
+- [AlexNet](https://www.kaggle.com/code/yesdeepakmittal/alexnet-implementation-using-pytorch)
+
+
+---
+### Other Links
+- https://paperswithcode.com/sota/image-classification-on-imagenet
+- https://www.pinecone.io/learn/imagenet/
+- https://pytorch.org/hub/research-models
