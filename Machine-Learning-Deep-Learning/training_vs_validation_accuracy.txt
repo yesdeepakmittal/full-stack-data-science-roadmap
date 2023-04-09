@@ -1,0 +1,9 @@
+In machine learning, we typically split our dataset into training and validation sets to evaluate the performance of our model.
+
+The training set is used to train the model, and the validation set is used to evaluate its performance on data that it has not seen before.
+
+During the training process, the model's performance is evaluated on both the training and validation sets. The training accuracy is the percentage of correctly predicted outputs on the training set, and the validation accuracy is the percentage of correctly predicted outputs on the validation set.
+
+Ideally, we want the model to have high accuracy on both the training and validation sets. However, it is common for the model to have higher accuracy on the training set than on the validation set. This is known as overfitting, and it occurs when the model is too complex and has learned the noise in the training set.
+
+To prevent overfitting, we can use techniques such as regularization, early stopping, and cross-validation. We can also monitor the difference between the training and validation accuracies during the training process. If the gap between the two accuracies is too large, it indicates that the model is overfitting, and we may need to adjust its complexity or use regularization techniques.
