@@ -1,0 +1,13 @@
+In a convolutional neural network (CNN), the sparsity of connections is a key feature that distinguishes it from other types of neural networks.
+
+The sparsity of connections means that each neuron in a convolutional layer is only connected to a small subset of neurons in the previous layer, rather than being fully connected. This is achieved through the use of convolutional filters, which slide over the input data and perform the same computation at each location, allowing for parameter sharing and reducing the number of connections.
+
+The benefit of this sparsity of connections is that it results in a much more efficient use of computational resources, as the number of parameters to be learned and the amount of memory required is reduced. This is particularly important for large input images, where fully connected layers would require a prohibitively large number of parameters.
+
+Furthermore, the sparsity of connections in convolutional layers also enables the network to be more robust to variations in the input data, such as translations or rotations, as the same filters can be applied at different locations in the input.
+
+Overall, the sparsity of connections in convolutional layers is a key advantage of CNNs, enabling them to efficiently process large input images while maintaining robustness to variations in the input data.
+
+
+--------------------
+Source - ChatGPT
