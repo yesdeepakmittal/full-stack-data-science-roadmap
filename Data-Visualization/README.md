@@ -1,5 +1,6 @@
 # Data Visualization Examples
 
-| Visualization Type | Tool |
-|--------------------|--------|
-|[Subplot]()|Matplotlib|
+| Visualization Type | 
+|--------------------|
+|[Visualize NN](https://towardsdatascience.com/how-to-visualize-neural-network-architectures-in-python-567cd2aa6d62) |
+|[Subplot]()|
