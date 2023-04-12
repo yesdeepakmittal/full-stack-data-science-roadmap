@@ -15,7 +15,6 @@ Animated AI Youtube Playlist | https://animatedai.github.io/
 - [Video - Padding](https://youtu.be/ph4LrdntONo)
 - [Video - Stride](https://youtu.be/3TdBtI9dh2I)
 - [Video - Groups, Depthwise, and Depthwise-Separable Convolution](https://youtu.be/vVaRhZXovbw)
-
 - [Video - Convolution NN Visualization](https://youtu.be/JboZfxUjLSk)
 - [Video - Convolution Explanation](https://youtu.be/jDe5BAsT2-Y)
 - [Video - Backpropagation in CNN](https://youtu.be/z9hJzduHToc)
