@@ -1,0 +1,1 @@
+$ python -m compileall app.py           | Compile python files .py to .pyc

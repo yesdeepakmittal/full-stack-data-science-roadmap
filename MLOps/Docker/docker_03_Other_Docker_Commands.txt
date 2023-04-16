@@ -10,6 +10,9 @@ $ docker image pull nginx:alpine
 [DOCKER IMAGES]
 $ docker build -t tag-name .                                                              |Dockerfile in the same directory
 $ docker build -f subdirectory-name/Dockerfile .                                          |Dockerfile in subdirectory
+$ docker save -o image-name.tar image_name
+$ docker load -i image_name.tar
+
 
 [DOCKER LOGS]
 $ docker logs container_name
