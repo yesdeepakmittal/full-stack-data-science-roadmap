@@ -17,6 +17,9 @@ $ curl -i http://127.0.0.1:5000/students/5 -X DELETE
 [MEMORY DETAIL]
 $ df -h
 $ htop
+$ du -h *     | Size of files in a dir
+$ df -h *		| Memory & Space available
+$ free 
 
 [SERVER]
 $ ssh user@hostip
@@ -28,3 +31,17 @@ $ ls my_folder/ | wc -l             |listing the number of files in my_folder | 
 
 [LOGS]
 $ ls -la
+
+[FILE - Make a new Directory and Clone the Git Repository]
+!mkdir trash
+%cd trash
+!git clone https://github.com/alexeygrigorev/clothing-dataset-small.git
+
+[FILE - Count number of files in each subdirectory]
+# ! ls clothing-dataset-small/ -h | wc
+! ls clothing-dataset-small/ | wc
+! for dir in clothing-dataset-small/*/; do dir=${dir%*/}; echo "$dir: $(ls -1q "$dir" | wc -l)"; done
+! tree -L 2 clothing-dataset-small/
+
+[FILE - Remove File]
+$ rm -r *     | remove everything
