@@ -22,6 +22,9 @@
 
 6. **Resource Planning for Application Deployment**
 
+7. **Processing**
+    - [MultiThreading V/s MultiProcessing Code](https://colab.research.google.com/github/pnavaro/python-notebooks/blob/master/notebooks/10-Multiprocessing.ipynb)
+
 ---
 Other Helpful links & References
 - [REST + Flask + FastAPI Demo Application](https://realpython.com/api-integration-in-python/)
