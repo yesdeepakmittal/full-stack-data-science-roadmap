@@ -45,3 +45,11 @@ $ ls -la
 
 [FILE - Remove File]
 $ rm -r *     | remove everything
+
+[SWAP MEMORY - UBUNTU]
+$ sudo swapon --show				| Check already existing Swap memory
+$ sudo fallocate -l 8G /swapfile	| Allocating 8GB to swap memory
+$ sudo chmod 600 /swapfile			|Set permission for swapfile 
+$ sudo mkswap /swapfile				| Formatting the space for Swap MEMORY
+$ sudo swapon /swapfile				| Enable Swap Memory 
+Add this to /etc/fstab file     -> 	/swapfile swap swap defaults 0 0

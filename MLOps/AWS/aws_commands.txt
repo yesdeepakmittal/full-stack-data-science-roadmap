@@ -1,0 +1,4 @@
+[Configure AWS CLI with Access Key & ID]
+$ aws configure             | then enter the Access Key & ID 
+
+$ aws s3 ls
