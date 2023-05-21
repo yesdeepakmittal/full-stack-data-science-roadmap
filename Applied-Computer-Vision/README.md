@@ -7,6 +7,7 @@
 
 ###### Convolutional-Neural-Network
 - [Paper - Convolution Arithmetic](https://arxiv.org/pdf/1603.07285v1.pdf)
+- [Code - CNN Features](https://www.cs.toronto.edu/~lczhang/360/lec/w04/convnet.html#:~:text=Parameters%20of%20a%20Convolutional%20Layer&text=There%20is%20one%20bias%20for,element%20in%20that%20output%20channel.)
 
 Animated AI Youtube Playlist | https://animatedai.github.io/
 - [Video - Fundamental of CNN](https://youtu.be/eMXuk97NeSI)
