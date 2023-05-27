@@ -2,3 +2,6 @@
 $ aws configure             | then enter the Access Key & ID 
 
 $ aws s3 ls
+
+[Login to AWS ECR with IAM user]
+$ docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) xxAccountIDxx.dkr.ecr.us-east-1.amazonaws.com              | Permission needed-> AmazonEC2ContainerRegistryFullAccess
