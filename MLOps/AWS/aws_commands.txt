@@ -5,3 +5,7 @@ $ aws s3 ls
 
 [Login to AWS ECR with IAM user]
 $ docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) xxAccountIDxx.dkr.ecr.us-east-1.amazonaws.com              | Permission needed-> AmazonEC2ContainerRegistryFullAccess
+
+[Launch Linux VM of AWS]
+$ chmod 400 aws-private-key.pem
+$ ssh -i aws-private-key.pem ubuntu@0.1.23.4
