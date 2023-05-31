@@ -1,0 +1,12 @@
+$ show dbs
+
+$ use database_name                                   | creating a new database 
+
+$ db.dpCollection.insertOne({name: "check"})          | creating a new collection named dpCollection if not exists and inserting a new record
+$ db.dpCollection.insertMany([{company:"a"},{company:"b"}]) | inserting many documents together as an array 
+
+$ db.dpCollection.find()                              | showing all the docuements in the collection
+$ db.dpCollection.find({name:"check"})                | finding all the records which contains name = "check"
+$ db.dpCollection.find().count() 
+$ db.dpCollection.find().limit(1)                     | printing only one record out of all
+$ db.dpCollection.find().sort({_id:-1})               | sorting the documents in descending order w.r.t _id

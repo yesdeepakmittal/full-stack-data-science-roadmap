@@ -3,3 +3,4 @@ abc.pickle
 .sonar_lock
 .scannerwork
 .venv
+git_push_script.sh

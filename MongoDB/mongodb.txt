@@ -1,0 +1,7 @@
+$ docker run -itd --name test-mongo -p 27017:27017 mongo
+
+---
+Install Mongodb Compass
+$ wget https://downloads.mongodb.com/compass/mongodb-compass_1.30.1_amd64.deb
+$ sudo apt install ./mongodb-compass_*_amd64.deb   or sudo dpkg -i mongodb-compass_1.30.1_amd64.deb
+CMD - MongoDB-compass
