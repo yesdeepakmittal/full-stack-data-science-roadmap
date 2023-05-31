@@ -1,0 +1,14 @@
+# Remove .gitconfig file
+$ rm -f "$HOME/.gitconfig"
+
+# Set user name & email globally
+$ git config --global user.email "deepakmittalbutjevra@gmail.com"
+$ git config --global user.name "yesdeepakmittal"
+
+$ git checkout main
+$ git log               | identify target commit hash
+$ git reset --hard <commit-hash>
+$ git push --force origin main          | Allow force push in Branch Protection rights
+
+# Remove .gitconfig file
+$ rm -f "$HOME/.gitconfig"
