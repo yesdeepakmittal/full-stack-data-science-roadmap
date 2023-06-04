@@ -62,3 +62,9 @@ rm -f "$HOME/.git-credentials"
 
 # Remove .gitconfig file
 rm -f "$HOME/.gitconfig"
+
+
+
+
+
+# delete remote branch after merging with base branch $ git push origin --delete personal
