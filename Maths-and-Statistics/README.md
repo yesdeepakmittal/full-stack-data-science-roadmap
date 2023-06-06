@@ -1,3 +1,6 @@
+# Maths 
+- [Plane determined by point and normal vector](https://mathinsight.org/forming_planes)
+
 # Distributions
 ### Discrete Probability Distributions
 1. [Bernoulli Distribution]
