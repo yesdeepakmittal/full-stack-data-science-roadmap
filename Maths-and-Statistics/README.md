@@ -1,5 +1,6 @@
 # Maths 
 - [Plane determined by point and normal vector](https://mathinsight.org/forming_planes)
+- [Distance from point to plane](https://mathinsight.org/distance_point_plane_examples)
 
 # Distributions
 ### Discrete Probability Distributions
